@@ -1,7 +1,8 @@
 package controller;
 
-import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -10,8 +11,11 @@ import java.util.Properties;
 
 public class SendEmailController {
     private final  String FROM= "zahramehdipoor13@gmail.com";
-
-    public SendEmailController(String code , String sendTo , Label errorLBL){
+    private Stage dialogStage;
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
+    public SendEmailController(String code, String sendTo){
         // ba daryaft email girande va ferestande code random sakhte shode ra ersal mikonad
         String to = sendTo;
 
@@ -46,10 +50,16 @@ public class SendEmailController {
 
             message.setText(code);
 
-            errorLBL.setTextFill(Color.BLACK);
+           // errorLBL.setTextFill(Color.BLACK);
 
             Transport.send(message);
-            errorLBL.setText("Check your email");
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(dialogStage);
+            alert.setTitle("Check...");
+            alert.setHeaderText("Please Check your email");
+
+            alert.showAndWait();
+            //errorLBL.setText("Check your email");
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
