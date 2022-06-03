@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="417.0" prefWidth="391.0" style="-fx-background-color: linear-gradient(to bottom left, #ff99ff 0%, #cc99ff 100%); -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerPageController">
+    <children>
+        <Button fx:id="backBTN" layoutX="138.0" layoutY="344.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ff00ff;" text="Back" textFill="#1b1b26">
+            <font>
+                <Font name="Franklin Gothic Demi Cond" size="17.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <ImageView fitHeight="121.0" fitWidth="199.0" layoutX="98.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+        <Button fx:id="addFriendBTN" layoutX="31.0" layoutY="229.0" mnemonicParsing="false" onAction="#pressAddFriend" prefHeight="45.0" prefWidth="107.0" style="-fx-background-color: #ff00ff;" text="Add Friend" textFill="#110101">
+            <font>
+                <Font name="Franklin Gothic Demi Cond" size="19.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="walletBTN" layoutX="149.0" layoutY="229.0" mnemonicParsing="false" onAction="#pressWallet" prefHeight="45.0" prefWidth="97.0" style="-fx-background-color: #ff00ff;" text="Wallet" textFill="#0a0000">
+            <font>
+                <Font name="Franklin Gothic Demi Cond" size="23.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="searchBTN" layoutX="259.0" layoutY="229.0" mnemonicParsing="false" onAction="#pressSearch" prefHeight="45.0" prefWidth="97.0" style="-fx-background-color: #ff00ff;" text="Search" textFill="#030000">
+            <font>
+                <Font name="Franklin Gothic Demi Cond" size="21.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <ImageView fitHeight="174.0" fitWidth="200.0" layoutX="109.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/7.png" />
+         </image></ImageView>
+    </children>
+</AnchorPane>
