@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -26,7 +27,10 @@ public class LoginPageController {
         this.customerFile=new CustomerFile();
         this.deliveryFile=new DeliveryFile();
     }
-
+    private Stage dialogStage;
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
     @FXML
     private Label errorLBL;
 
@@ -52,7 +56,16 @@ public class LoginPageController {
                 }
             }
             else
-                errorLBL.setText("Try Again");
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(dialogStage);
+                alert.setTitle("Invalid Fields");
+                alert.setHeaderText("Please correct invalid fields");
+                alert.setContentText("Try Again ");
+
+                alert.showAndWait();
+            }
+                //errorLBL.setText("Try Again");
         }
         else if( customerFile.isExist(usernameFLD.getText())){
             Customer customer = customerFile.getCustomer(usernameFLD.getText());
@@ -64,7 +77,17 @@ public class LoginPageController {
                 }
             }
             else
-                errorLBL.setText("Try Again");
+
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(dialogStage);
+                alert.setTitle("Invalid Fields");
+                alert.setHeaderText("Please correct invalid fields");
+                alert.setContentText("Try Again ");
+
+                alert.showAndWait();
+            }
+              //  errorLBL.setText("Try Again");
         }
         else if(deliveryFile.isExist(usernameFLD.getText())){
             Delivery delivery = deliveryFile.getDelivery(usernameFLD.getText());
@@ -76,10 +99,28 @@ public class LoginPageController {
                 }
             }
             else
-                errorLBL.setText("Try Again");
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(dialogStage);
+                alert.setTitle("Invalid Fields");
+                alert.setHeaderText("Please correct invalid fields");
+                alert.setContentText("Try Again ");
+
+                alert.showAndWait();
+            }
+                //errorLBL.setText("Try Again");
         }
         else
-            errorLBL.setText("Try Again");
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(dialogStage);
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText("Try Again ");
+
+            alert.showAndWait();
+        }
+           // errorLBL.setText("Try Again");
     }
 
     public void goToDeliveryPage(Delivery delivery) throws IOException{
