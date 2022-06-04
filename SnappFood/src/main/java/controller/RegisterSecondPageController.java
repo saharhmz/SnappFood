@@ -64,6 +64,7 @@ public class RegisterSecondPageController {
     @FXML
     void registerHandler(ActionEvent event) {
         //errorLBL.setText("");
+        SendRequestFile sendRequestFile= new SendRequestFile();
         if(role != null){
             if(regex.nameRegex(nameFLD.getText()) && regex.nameRegex(familyFLD.getText()) &&
                     regex.passwordRegex(passwordFLD.getText()) && regex.phoneNumberRegex(phoneNumberFLD.getText())){
@@ -71,6 +72,9 @@ public class RegisterSecondPageController {
                     Customer customer = new Customer(nameFLD.getText(),familyFLD.getText(),username,passwordFLD.getText()
                             ,phoneNumberFLD.getText());
                     customerFile.addCustomer(customer);
+                    if(sendRequestFile.requestIsExist(customer.getUsername())){
+                        sendRequestFile.sendDiscountCodeToRequestSender(customer.getUsername());
+                    }
                     try {
                         goToCustomerPage(customer);
                     } catch (IOException e) {
