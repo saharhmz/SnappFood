@@ -7,9 +7,18 @@ public class Customer extends Person{
     private String discountCode;
     private String discountAmount;
     private ArrayList<String> Cart;
+    private String wallet;
 
     public Customer(String name, String family, String username, String password, String phoneNumber) {
         super(name, family, username, password, phoneNumber);
+    }
+
+    public String getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(String wallet) {
+        this.wallet = wallet;
     }
 
     public String getDiscountCode() {
