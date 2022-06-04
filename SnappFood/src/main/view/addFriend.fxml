@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="505.0" prefWidth="357.0" style="-fx-background-color: linear-gradient(to bottom left, #ff99ff 0%, #cc99ff 100%); -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddFriendController">
+    <children>
+        <Button fx:id="backBTN" layoutX="14.0" layoutY="445.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ff00ff;" text="Back" textFill="#1b1b26">
+            <font>
+                <Font name="Franklin Gothic Demi Cond" size="17.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <ImageView fitHeight="121.0" fitWidth="199.0" layoutX="98.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+        <Button fx:id="sendBTN" layoutX="94.0" layoutY="337.0" mnemonicParsing="false" onAction="#pressSend" prefHeight="45.0" prefWidth="170.0" style="-fx-background-color: #ff00ff;" text="Send" textFill="#110101">
+            <font>
+                <Font name="Franklin Gothic Demi Cond" size="25.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <ImageView fitHeight="189.0" fitWidth="224.0" layoutX="84.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/4458537.png" />
+         </image></ImageView>
+        <Label fx:id="errorLBL" alignment="CENTER" layoutX="24.0" layoutY="402.0" prefHeight="22.0" prefWidth="310.0" textFill="#e80808" />
+        <TextField fx:id="friendEmailFLD" layoutX="31.0" layoutY="267.0" prefHeight="39.0" prefWidth="296.0" promptText="Email">
+            <font>
+                <Font name="Franklin Gothic Demi Cond" size="17.0" />
+            </font>
+        </TextField>
+    </children>
+</AnchorPane>
