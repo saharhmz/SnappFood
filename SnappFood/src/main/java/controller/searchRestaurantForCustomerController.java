@@ -42,7 +42,7 @@ public class searchRestaurantForCustomerController
     private TextField searchFDL;
 
     @FXML
-    private TableColumn<?, ?> resturantColumn;
+    private TableColumn<?, ?> restaurantColumn;
 
     @FXML
     private TableView<?> searchTable;
