@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
@@ -33,7 +34,10 @@ public class RegisterFirstPageController {
         customerFile=new CustomerFile();
         deliveryFile=new DeliveryFile();
     }
-
+    private Stage dialogStage;
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
     @FXML
     private TextField codeFLD;
 
@@ -72,19 +76,38 @@ public class RegisterFirstPageController {
 
     @FXML
     void sendCodeHandler(ActionEvent event) {
-        errorLBL.setText("");
-        errorLBL.setTextFill(Color.RED);
+       // errorLBL.setText("");
+        //errorLBL.setTextFill(Color.RED);
         if(regex.emailRegex(emailFLD.getText())){
             if( deliveryFile.emailNotExist(emailFLD.getText()) && customerFile.emailNotExist(emailFLD.getText())  ){
                 this.code=randomNumber();
                 username=emailFLD.getText();
-                sendEmailController=new SendEmailController(code , emailFLD.getText(), errorLBL);
+                sendEmailController=new SendEmailController(code , emailFLD.getText());
             }
             else
-                errorLBL.setText("The account is exist with the entered email");
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(dialogStage);
+                alert.setTitle("Invalid Fields");
+                alert.setHeaderText("Please correct invalid fields");
+                alert.setContentText("The account is exist with the entered email ");
+
+                alert.showAndWait();
+            }
+              //  errorLBL.setText("The account is exist with the entered email");
 
         }else
-            errorLBL.setText("Entered email is not valid");
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(dialogStage);
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText("Entered email is not valid ");
+
+            alert.showAndWait();
+        }
+
+           // errorLBL.setText("Entered email is not valid");
     }
 
     String randomNumber(){
