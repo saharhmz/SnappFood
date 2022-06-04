@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="590.0" prefWidth="463.0" style="-fx-background-color: linear-gradient(to bottom left, #ff99ff 0%, #cc99ff 100%); -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchController">
+<AnchorPane prefHeight="590.0" prefWidth="463.0" style="-fx-background-color: linear-gradient(to bottom left, #ff99ff 0%, #cc99ff 100%); -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.searchRestaurantForCustomerController">
     <children>
         <Button fx:id="backBTN" layoutX="28.0" layoutY="538.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ff00ff;" text="Back" textFill="#1b1b26">
             <font>
@@ -57,7 +57,7 @@
         </Button>
         <TableView fx:id="searchTable" layoutX="39.0" layoutY="166.0" prefHeight="359.0" prefWidth="385.0">
             <columns>
-                <TableColumn fx:id="resturantColumn" prefWidth="75.0" text="Resturant" />
+                <TableColumn fx:id="restaurantColumn" prefWidth="75.0" text="Restaurant" />
                 <TableColumn fx:id="cafeColumn" prefWidth="75.0" text="Cafe" />
             </columns>
             <columnResizePolicy>
