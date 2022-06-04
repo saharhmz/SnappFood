@@ -10,10 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Customer;
-import model.CustomerFile;
-import model.DeliveryFile;
-import model.Regex;
+import model.*;
 
 import java.io.IOException;
 
@@ -71,14 +68,24 @@ public class RegisterSecondPageController {
             if(regex.nameRegex(nameFLD.getText()) && regex.nameRegex(familyFLD.getText()) &&
                     regex.passwordRegex(passwordFLD.getText()) && regex.phoneNumberRegex(phoneNumberFLD.getText())){
                 if(role.equals("customer")){
-                    customerFile.addCustomer(new Customer(nameFLD.getText(),familyFLD.getText(),username,passwordFLD.getText()
-                    ,phoneNumberFLD.getText()));
-//                    goToCustomerPage();
+                    Customer customer = new Customer(nameFLD.getText(),familyFLD.getText(),username,passwordFLD.getText()
+                            ,phoneNumberFLD.getText());
+                    customerFile.addCustomer(customer);
+                    try {
+                        goToCustomerPage(customer);
+                    } catch (IOException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
                 else if(role.equals("delivery")){
-                    deliveryFile.addCustomer(new Customer(nameFLD.getText(),familyFLD.getText(),username,passwordFLD.getText()
-                            ,phoneNumberFLD.getText()));
-//                    goToDeliveryPage();
+                    Delivery delivery = new Delivery(nameFLD.getText(),familyFLD.getText(),username,passwordFLD.getText()
+                            ,phoneNumberFLD.getText());
+                    deliveryFile.addDelivery(delivery);
+                    try {
+                        goToDeliveryPage(delivery);
+                    } catch (IOException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
             }
             else
@@ -91,7 +98,7 @@ public class RegisterSecondPageController {
 
                 alert.showAndWait();
             }
-               // errorLBL.setText("Not Valid");
+            // errorLBL.setText("Not Valid");
 
         }
         else
@@ -104,8 +111,30 @@ public class RegisterSecondPageController {
 
             alert.showAndWait();
         }
-           // errorLBL.setText("Choose Your Role");
+        // errorLBL.setText("Choose Your Role");
 
+    }
+
+    void goToCustomerPage(Customer customer) throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/customerPage.fxml"));
+        loader.load();
+        CustomerPageController customerPageController = loader.getController();
+        registerPageStage.setScene(new Scene((Parent) loader.getRoot()));
+        registerPageStage.setTitle("Customer");
+        registerPageStage.setResizable(false);
+        customerPageController.initFunction(registerPageStage , customer);
+        registerPageStage.show();
+    }
+
+    public void goToDeliveryPage(Delivery delivery) throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/deliveryPage.fxml"));
+        loader.load();
+        DeliveryPageController deliveryPageController= loader.getController();
+        registerPageStage.setScene(new Scene((Parent) loader.getRoot()));
+        registerPageStage.setTitle("Delivery");
+        registerPageStage.setResizable(false);
+        deliveryPageController.initFunction(registerPageStage , delivery);
+        registerPageStage.show();
     }
 
     @FXML
