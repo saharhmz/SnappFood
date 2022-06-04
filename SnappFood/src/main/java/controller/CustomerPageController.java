@@ -30,8 +30,8 @@ public class CustomerPageController {
         customerStage.show();
     }
 
-    @FXML
-    void pressSearch(ActionEvent event) {
+   @FXML
+    void pressSearch(ActionEvent event) throws IOException {
           FXMLLoader loader= new FXMLLoader(getClass().getResource("/searchRestaurantForCustomer.fxml"));
         loader.load();
         searchRestaurantForCustomerController searchRestaurantForCustomerController = loader.getController();
