@@ -36,13 +36,27 @@ public class CustomerPageController {
     }
 
     @FXML
-    void pressWallet(ActionEvent event) {
-
+    void pressWallet(ActionEvent event) throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/wallet.fxml"));
+        loader.load();
+        WalletController walletController= loader.getController();
+        customerStage.setScene(new Scene((Parent) loader.getRoot()));
+        customerStage.setTitle("Send Request");
+        customerStage.setResizable(false);
+        walletController.initFunction(customerStage, customer);
+        customerStage.show();
     }
 
     @FXML
-    void pressAddFriend(ActionEvent event) {
-
+    void pressAddFriend(ActionEvent event) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/addFriend.fxml"));
+        loader.load();
+        AddFriendController addFriendController= loader.getController();
+        customerStage.setScene(new Scene((Parent) loader.getRoot()));
+        customerStage.setTitle("Send Request");
+        customerStage.setResizable(false);
+        addFriendController.initFunction(customerStage, customer);
+        customerStage.show();
     }
 
 }
