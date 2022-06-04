@@ -24,19 +24,19 @@ public class DeliveryFile {
         return size;
     }
 
-    public void addCustomer(Customer customer){
+    public void addDelivery(Delivery delivery){
         file= new File("delivery.txt");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file,true))){
             writer.newLine();
-            writer.write(customer.getName());
+            writer.write(delivery.getName());
             writer.newLine();
-            writer.write(customer.getFamily());
+            writer.write(delivery.getFamily());
             writer.newLine();
-            writer.write(customer.getUsername());
+            writer.write(delivery.getUsername());
             writer.newLine();
-            writer.write(customer.getPassword());
+            writer.write(delivery.getPassword());
             writer.newLine();
-            writer.write(customer.getPhoneNumber());
+            writer.write(delivery.getPhoneNumber());
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
