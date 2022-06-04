@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -47,7 +48,10 @@ public class RegisterSecondPageController {
 
     @FXML
     private TextField phoneNumberFLD;
-
+    private Stage dialogStage;
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
     @FXML
     void backHandler(ActionEvent event) throws IOException {
         FXMLLoader loader= new FXMLLoader(getClass().getResource("/registerFirstPage.fxml"));
@@ -62,7 +66,7 @@ public class RegisterSecondPageController {
 
     @FXML
     void registerHandler(ActionEvent event) {
-        errorLBL.setText("");
+        //errorLBL.setText("");
         if(role != null){
             if(regex.nameRegex(nameFLD.getText()) && regex.nameRegex(familyFLD.getText()) &&
                     regex.passwordRegex(passwordFLD.getText()) && regex.phoneNumberRegex(phoneNumberFLD.getText())){
@@ -78,11 +82,29 @@ public class RegisterSecondPageController {
                 }
             }
             else
-                errorLBL.setText("Not Valid");
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(dialogStage);
+                alert.setTitle("Invalid Fields");
+                alert.setHeaderText("Please correct invalid fields");
+                alert.setContentText("Not Valid ");
+
+                alert.showAndWait();
+            }
+               // errorLBL.setText("Not Valid");
 
         }
         else
-            errorLBL.setText("Choose Your Role");
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(dialogStage);
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText("Choose Your Role ");
+
+            alert.showAndWait();
+        }
+           // errorLBL.setText("Choose Your Role");
 
     }
 
