@@ -32,13 +32,13 @@ public class CustomerPageController {
 
     @FXML
     void pressSearch(ActionEvent event) {
-           FXMLLoader loader= new FXMLLoader(getClass().getResource("/SearchCustumer.fxml"));
+          FXMLLoader loader= new FXMLLoader(getClass().getResource("/searchRestaurantForCustomer.fxml"));
         loader.load();
-        SearchController searchController= loader.getController();
+        searchRestaurantForCustomerController searchRestaurantForCustomerController = loader.getController();
         customerStage.setScene(new Scene((Parent) loader.getRoot()));
         customerStage.setTitle("Login");
         customerStage.setResizable(false);
-        searchController.initFunction(customerStage,customer);
+        searchRestaurantForCustomerController.initFunction(customerStage,customer);
         customerStage.show();
 
     }
