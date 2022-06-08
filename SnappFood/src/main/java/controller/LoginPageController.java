@@ -50,7 +50,7 @@ public class LoginPageController {
         if(usernameFLD.getText().equals(adminFile.getAdmin().getUsername())){
             if(passwordFLD.getText().equals(adminFile.getAdmin().getPassword())){
                 try {
-                    goToAdminPage();
+                    goToAdminPage(adminFile.getAdmin());
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
                 }
@@ -65,7 +65,6 @@ public class LoginPageController {
 
                 alert.showAndWait();
             }
-                //errorLBL.setText("Try Again");
         }
         else if( customerFile.isExist(usernameFLD.getText())){
             Customer customer = customerFile.getCustomer(usernameFLD.getText());
@@ -87,7 +86,6 @@ public class LoginPageController {
 
                 alert.showAndWait();
             }
-              //  errorLBL.setText("Try Again");
         }
         else if(deliveryFile.isExist(usernameFLD.getText())){
             Delivery delivery = deliveryFile.getDelivery(usernameFLD.getText());
@@ -108,7 +106,6 @@ public class LoginPageController {
 
                 alert.showAndWait();
             }
-                //errorLBL.setText("Try Again");
         }
         else
         {
@@ -120,7 +117,6 @@ public class LoginPageController {
 
             alert.showAndWait();
         }
-           // errorLBL.setText("Try Again");
     }
 
     public void goToDeliveryPage(Delivery delivery) throws IOException{
@@ -145,14 +141,14 @@ public class LoginPageController {
         loginPageStage.show();
     }
 
-    public void goToAdminPage() throws IOException{
+    public void goToAdminPage(Admin admin) throws IOException{
         FXMLLoader loader= new FXMLLoader(getClass().getResource("/adminPage.fxml"));
         loader.load();
         AdminPageController adminPageController = loader.getController();
         loginPageStage.setScene(new Scene((Parent) loader.getRoot()));
         loginPageStage.setTitle("admin");
         loginPageStage.setResizable(false);
-        adminPageController.initFunction(loginPageStage);
+        adminPageController.initFunction(loginPageStage,admin);
         loginPageStage.show();
     }
 
