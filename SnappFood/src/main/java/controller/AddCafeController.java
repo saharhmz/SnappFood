@@ -45,7 +45,7 @@ public class AddCafeController {
     @FXML
     void pressAddList(ActionEvent event) throws IOException{
         if(regex.nameRegex(nameFLD.getText()) && regex.addressRegex(addressFLD.getText())){
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("/addCafeListFirstPage.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("/addCafeList.fxml"));
             loader.load();
             AddCafeListFirstPageController addCafeListFirstPageController= loader.getController();
             addCafeStage.setScene(new Scene((Parent) loader.getRoot()));
