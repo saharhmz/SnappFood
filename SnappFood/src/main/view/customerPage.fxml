@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
@@ -7,9 +13,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="417.0" prefWidth="486.0" style="-fx-background-color: linear-gradient(to bottom left, #ff99ff 0%, #cc99ff 100%); -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerPageController">
+<AnchorPane prefHeight="574.0" prefWidth="483.0" style="-fx-background-color: linear-gradient(to bottom left, #ff99ff 0%, #cc99ff 100%); -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerPageController">
     <children>
-        <Button fx:id="backBTN" layoutX="189.0" layoutY="343.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ff00ff;" text="Back" textFill="#1b1b26">
+        <Button fx:id="backBTN" layoutX="188.0" layoutY="514.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ff00ff;" text="Back" textFill="#1b1b26">
             <font>
                 <Font name="Franklin Gothic Demi Cond" size="17.0" />
             </font>
@@ -18,7 +24,7 @@
             </cursor>
         </Button>
         <ImageView fitHeight="121.0" fitWidth="199.0" layoutX="98.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
-        <Button fx:id="addFriendBTN" layoutX="14.0" layoutY="229.0" mnemonicParsing="false" onAction="#pressAddFriend" prefHeight="66.0" prefWidth="142.0" style="-fx-background-color: #ff00ff;" text="Add Friend" textFill="#110101" wrapText="true">
+        <Button fx:id="addFriendBTN" layoutX="74.0" layoutY="341.0" mnemonicParsing="false" onAction="#pressAddFriend" prefHeight="66.0" prefWidth="142.0" style="-fx-background-color: #ff00ff;" text="Add Friend" textFill="#110101" wrapText="true">
             <font>
                 <Font name="Franklin Gothic Demi Cond" size="19.0" />
             </font>
@@ -33,7 +39,7 @@
             </ImageView>
          </graphic>
         </Button>
-        <Button fx:id="walletBTN" layoutX="172.0" layoutY="229.0" mnemonicParsing="false" onAction="#pressWallet" prefHeight="66.0" prefWidth="141.0" style="-fx-background-color: #ff00ff;" text="Wallet" textFill="#0a0000" wrapText="true">
+        <Button fx:id="walletBTN" layoutX="260.0" layoutY="341.0" mnemonicParsing="false" onAction="#pressWallet" prefHeight="66.0" prefWidth="141.0" style="-fx-background-color: #ff00ff;" text="Wallet" textFill="#0a0000" wrapText="true">
             <font>
                 <Font name="Franklin Gothic Demi Cond" size="23.0" />
             </font>
@@ -48,7 +54,7 @@
             </ImageView>
          </graphic>
         </Button>
-        <Button fx:id="searchBTN" layoutX="329.0" layoutY="229.0" mnemonicParsing="false" onAction="#pressSearch" prefHeight="66.0" prefWidth="142.0" style="-fx-background-color: #ff00ff;" text="Search" textFill="#030000">
+        <Button fx:id="searchBTN" layoutX="74.0" layoutY="254.0" mnemonicParsing="false" onAction="#pressSearch" prefHeight="66.0" prefWidth="142.0" style="-fx-background-color: #ff00ff;" text="Search" textFill="#030000">
             <font>
                 <Font name="Franklin Gothic Demi Cond" size="21.0" />
             </font>
@@ -58,14 +64,29 @@
          <graphic>
             <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/img_456268%20(1).png" />
+                  <Image url="@image/img_456268 (1).png" />
                </image>
             </ImageView>
          </graphic>
         </Button>
-        <ImageView fitHeight="174.0" fitWidth="200.0" layoutX="156.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="184.0" fitWidth="185.0" layoutX="145.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/7.png" />
          </image></ImageView>
+      <Button fx:id="cartBTN" layoutX="260.0" layoutY="254.0" mnemonicParsing="false" onAction="#pressCart" prefHeight="66.0" prefWidth="142.0" style="-fx-background-color: #ff00ff;" text="Cart" textFill="#030000">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="21.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="47.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/bag.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>
