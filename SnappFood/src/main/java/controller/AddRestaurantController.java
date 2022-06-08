@@ -47,9 +47,9 @@ public class AddRestaurantController {
     @FXML
     void pressAddList(ActionEvent event) throws IOException{
         if(regex.nameRegex(nameFLD.getText()) && regex.addressRegex(addressFLD.getText())){
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("/addRestaurantListFirstPage.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("/addRestaurantList.fxml"));
             loader.load();
-            AddRestaurantListFirstPageController addRestaurantListController= loader.getController();
+            AddRestaurantListController addRestaurantListController= loader.getController();
             addRestaurantStage.setScene(new Scene((Parent) loader.getRoot()));
             addRestaurantStage.setTitle("Restaurant List");
             addRestaurantStage.setResizable(false);
