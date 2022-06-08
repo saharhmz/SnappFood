@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AddCafeListFirstPageController {
+public class AddCafeListController {
 
     private Stage addListStage;
     private String name;
