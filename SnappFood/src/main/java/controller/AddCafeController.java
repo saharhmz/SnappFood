@@ -47,11 +47,11 @@ public class AddCafeController {
         if(regex.nameRegex(nameFLD.getText()) && regex.addressRegex(addressFLD.getText())){
             FXMLLoader loader= new FXMLLoader(getClass().getResource("/addCafeList.fxml"));
             loader.load();
-            AddCafeListFirstPageController addCafeListFirstPageController= loader.getController();
+            AddCafeListController addCafeListController= loader.getController();
             addCafeStage.setScene(new Scene((Parent) loader.getRoot()));
             addCafeStage.setTitle("Add List");
             addCafeStage.setResizable(false);
-            addCafeListFirstPageController.initFunction(addCafeStage , nameFLD.getText() , addressFLD.getText());
+            addCafeListController.initFunction(addCafeStage , nameFLD.getText() , addressFLD.getText());
             addCafeStage.show();
         }
         else
