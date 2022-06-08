@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
@@ -10,9 +16,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="629.0" prefWidth="473.0" style="-fx-background-color: linear-gradient(to bottom left, #ff99ff 0%, #cc99ff 100%); -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCafeListFirstPageController">
+<AnchorPane prefHeight="629.0" prefWidth="473.0" style="-fx-background-color: linear-gradient(to bottom left, #ff99ff 0%, #cc99ff 100%); -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCafeListController">
     <children>
-        <Button fx:id="backBTN" layoutX="20.0" layoutY="584.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ff00ff;" text="Back" textFill="#1b1b26">
+        <Button fx:id="backBTN" layoutX="20.0" layoutY="589.0" mnemonicParsing="false" onAction="#backHandler" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ff00ff;" text="Back" textFill="#1b1b26">
             <font>
                 <Font name="Franklin Gothic Demi Cond" size="17.0" />
             </font>
@@ -37,14 +43,24 @@
                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                     </columnResizePolicy>
                                 </TableView>
-                          <Button fx:id="hotDrinkAddBTN" layoutX="144.0" layoutY="493.0" mnemonicParsing="false" onAction="#pressHotDrinkAdd" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #ff00ff;" text="Add" textFill="#110101">
+                          <Button fx:id="hotDrinkAddBTN" layoutX="347.0" layoutY="472.0" mnemonicParsing="false" onAction="#pressHotDrinkAdd" prefHeight="32.0" prefWidth="74.0" style="-fx-background-color: #ff00ff;" text="Add" textFill="#110101">
                               <font>
-                                  <Font name="Franklin Gothic Demi Cond" size="24.0" />
+                                  <Font name="Franklin Gothic Demi Cond" size="19.0" />
                               </font>
                               <cursor>
                                   <Cursor fx:constant="HAND" />
                               </cursor>
                           </Button>
+                        <TextField fx:id="itemHotDrinkFDL" layoutX="14.0" layoutY="471.0" prefHeight="40.0" prefWidth="160.0" promptText="Item">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="priceHotDrinkFDL" layoutX="183.0" layoutY="472.0" prefHeight="38.0" prefWidth="150.0" promptText="Price">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="19.0" />
+                           </font>
+                        </TextField>
                             </children>
                         </AnchorPane>
                     </content>
@@ -62,14 +78,24 @@
                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                     </columnResizePolicy>
                                 </TableView>
-                        <Button fx:id="coldDrinkAddBTN" layoutX="147.0" layoutY="489.0" mnemonicParsing="false" onAction="#pressColdDrinkAdd" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #ff00ff;" text="Add" textFill="#110101">
+                        <Button fx:id="coldDrinkAddBTN" layoutX="352.0" layoutY="475.0" mnemonicParsing="false" onAction="#pressColdDrinkAdd" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: #ff00ff;" text="Add" textFill="#110101">
                            <font>
-                              <Font name="Franklin Gothic Demi Cond" size="24.0" />
+                              <Font name="Franklin Gothic Demi Cond" size="20.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
+                        <TextField fx:id="itemColdDrinkFDL" layoutX="14.0" layoutY="475.0" prefHeight="38.0" prefWidth="156.0" promptText="Item">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="17.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="priceColdDrinkFDL" layoutX="174.0" layoutY="475.0" prefHeight="38.0" prefWidth="156.0" promptText="Price">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="20.0" />
+                           </font>
+                        </TextField>
                             </children>
                         </AnchorPane>
                     </content>
@@ -87,14 +113,24 @@
                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                     </columnResizePolicy>
                                 </TableView>
-                        <Button fx:id="cakeAddBTN" layoutX="144.0" layoutY="489.0" mnemonicParsing="false" onAction="#pressCakeAdd" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #ff00ff;" text="Add" textFill="#110101">
+                        <Button fx:id="cakeAddBTN" layoutX="341.0" layoutY="472.0" mnemonicParsing="false" onAction="#pressCakeAdd" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #ff00ff;" text="Add" textFill="#110101">
                            <font>
-                              <Font name="Franklin Gothic Demi Cond" size="24.0" />
+                              <Font name="Franklin Gothic Demi Cond" size="18.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
+                        <TextField fx:id="itemCakeFDL" layoutX="14.0" layoutY="472.0" prefHeight="43.0" prefWidth="159.0" promptText="Item">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="priceCakeFDL" layoutX="180.0" layoutY="473.0" prefHeight="43.0" prefWidth="145.0" promptText="Price">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="17.0" />
+                           </font>
+                        </TextField>
                             </children>
                         </AnchorPane>
                     </content>
