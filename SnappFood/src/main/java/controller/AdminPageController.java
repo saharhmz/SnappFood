@@ -5,15 +5,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import model.Admin;
 
 import java.io.IOException;
 
 public class AdminPageController {
 
     private Stage adminStage;
-    public void initFunction(Stage adminStage){
+    @FXML
+    private Label adminNameLBL;
+    private Admin admin;
+
+    public void initFunction(Stage adminStage , Admin admin){
         this.adminStage=adminStage;
+        this.admin=admin;
+        adminNameLBL.setText(admin.getName()+" "+admin.getFamily());
     }
 
     @FXML
@@ -36,7 +44,7 @@ public class AdminPageController {
         adminStage.setScene(new Scene((Parent) loader.getRoot()));
         adminStage.setTitle("Add Cafe");
         adminStage.setResizable(false);
-        addCafeController.initFunction(adminStage);
+        addCafeController.initFunction(adminStage,admin);
         adminStage.show();
     }
 
@@ -48,7 +56,7 @@ public class AdminPageController {
         adminStage.setScene(new Scene((Parent) loader.getRoot()));
         adminStage.setTitle("Add Restaurant");
         adminStage.setResizable(false);
-        addRestaurantController.initFunction(adminStage);
+        addRestaurantController.initFunction(adminStage,admin);
         adminStage.show();
     }
 
