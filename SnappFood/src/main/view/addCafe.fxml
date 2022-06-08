@@ -31,11 +31,11 @@
         </Label>
         <TextField fx:id="nameFLD" layoutX="199.0" layoutY="211.0" prefHeight="28.0" prefWidth="182.0" promptText="Name">
             <font>
-                <Font name="Century Schoolbook Bold Italic" size="14.0" />
+                <Font name="Franklin Gothic Demi Cond" size="15.0" />
             </font></TextField>
-        <TextField fx:id="addressFLD" layoutX="200.0" layoutY="277.0" promptText="Address">
+        <TextField fx:id="addressFLD" layoutX="200.0" layoutY="277.0" prefHeight="28.0" prefWidth="182.0" promptText="Address">
             <font>
-                <Font name="Century Schoolbook" size="14.0" />
+                <Font name="Franklin Gothic Demi Cond" size="15.0" />
             </font></TextField>
         <Button fx:id="addlistBTN" layoutX="134.0" layoutY="333.0" mnemonicParsing="false" onAction="#pressAddList" prefHeight="51.0" prefWidth="143.0" style="-fx-background-color: #ff00ff;" text="Add List" textFill="#1b1b26">
             <font>
