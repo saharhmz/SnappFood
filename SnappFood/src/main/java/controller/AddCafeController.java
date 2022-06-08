@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.Admin;
 import model.Regex;
 
 import java.io.IOException;
@@ -16,9 +17,11 @@ public class AddCafeController {
 
     private Stage addCafeStage;
     private Regex regex;
+    private Admin admin;
 
-    public void initFunction(Stage addCafeStage){
+    public void initFunction(Stage addCafeStage , Admin admin){
         this.addCafeStage=addCafeStage;
+        this.admin=admin;
         regex=new Regex();
     }
     @FXML
@@ -38,7 +41,7 @@ public class AddCafeController {
         addCafeStage.setScene(new Scene((Parent) loader.getRoot()));
         addCafeStage.setTitle("Admin");
         addCafeStage.setResizable(false);
-        adminPageController.initFunction(addCafeStage);
+        adminPageController.initFunction(addCafeStage,admin);
         addCafeStage.show();
     }
 
@@ -47,11 +50,11 @@ public class AddCafeController {
         if(regex.nameRegex(nameFLD.getText()) && regex.addressRegex(addressFLD.getText())){
             FXMLLoader loader= new FXMLLoader(getClass().getResource("/addCafeList.fxml"));
             loader.load();
-            AddCafeListController addCafeListController= loader.getController();
+            AddCafeListController addCafeListFirstPageController= loader.getController();
             addCafeStage.setScene(new Scene((Parent) loader.getRoot()));
             addCafeStage.setTitle("Add List");
             addCafeStage.setResizable(false);
-            addCafeListController.initFunction(addCafeStage , nameFLD.getText() , addressFLD.getText());
+            addCafeListFirstPageController.initFunction(addCafeStage , nameFLD.getText() , addressFLD.getText() ,admin);
             addCafeStage.show();
         }
         else
