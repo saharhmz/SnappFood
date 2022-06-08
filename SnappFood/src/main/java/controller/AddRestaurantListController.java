@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +25,21 @@ public class AddRestaurantListController implements Initializable {
         this.address=address;
         this.name=name;
     }
+    @FXML
+    private TextField priceFastFoodFDL;
+    @FXML
+    private TextField pricePersianFoodFDL;
+    @FXML
+    private TextField itemPersianFoodFDL;
+
+    @FXML
+    private TextField itemDrinkFDL;
+
+    @FXML
+    private TextField priceDrinkFDL;
+
+    @FXML
+    private TextField itemFastFoodFDL;
 
     @FXML
     private TableColumn<?, ?> drinkItem;
