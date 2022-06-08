@@ -66,5 +66,8 @@ public class CustomerPageController {
         addFriendController.initFunction(customerStage, customer);
         customerStage.show();
     }
+    @FXML
+    public void pressCart(ActionEvent actionEvent) {
+    }
 
 }
