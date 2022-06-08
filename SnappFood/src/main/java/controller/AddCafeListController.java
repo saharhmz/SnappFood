@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.Admin;
 
 import java.io.IOException;
 
@@ -17,11 +18,13 @@ public class AddCafeListController {
     private Stage addListStage;
     private String name;
     private String address;
+    private Admin admin;
 
-    public void initFunction(Stage addListStage , String name , String address){
+    public void initFunction(Stage addListStage , String name , String address , Admin admin){
         this.addListStage=addListStage;
         this.name=name;
         this.address=address;
+        this.admin=admin;
     }
     @FXML
     private TextField itemCakeFDL;
@@ -72,7 +75,7 @@ public class AddCafeListController {
         addListStage.setScene(new Scene((Parent) loader.getRoot()));
         addListStage.setTitle("Add Cafe");
         addListStage.setResizable(false);
-        addCafeController.initFunction(addListStage);
+        addCafeController.initFunction(addListStage,admin);
         addListStage.show();
     }
 
