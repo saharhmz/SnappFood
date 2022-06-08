@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AddRestaurantListFirstPageController implements Initializable {
+public class AddRestaurantListController implements Initializable {
 
     private Stage listStage;
     private String name;
