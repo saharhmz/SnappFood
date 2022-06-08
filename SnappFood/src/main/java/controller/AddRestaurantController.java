@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.Admin;
 import model.Regex;
 
 import java.io.IOException;
@@ -16,9 +17,11 @@ public class AddRestaurantController {
 
     private Stage addRestaurantStage;
     private Regex regex;
+    private Admin admin;
 
-    public void initFunction(Stage addRestaurantStage){
+    public void initFunction(Stage addRestaurantStage , Admin admin){
         this.addRestaurantStage=addRestaurantStage;
+        this.admin=admin;
         regex=new Regex();
     }
 
@@ -39,7 +42,7 @@ public class AddRestaurantController {
         addRestaurantStage.setScene(new Scene((Parent) loader.getRoot()));
         addRestaurantStage.setTitle("Admin");
         addRestaurantStage.setResizable(false);
-        adminPageController.initFunction(addRestaurantStage);
+        adminPageController.initFunction(addRestaurantStage,admin);
         addRestaurantStage.show();
 
     }
@@ -53,7 +56,7 @@ public class AddRestaurantController {
             addRestaurantStage.setScene(new Scene((Parent) loader.getRoot()));
             addRestaurantStage.setTitle("Restaurant List");
             addRestaurantStage.setResizable(false);
-            addRestaurantListController.initFunction(addRestaurantStage , nameFLD.getText(),addressFLD.getText());
+            addRestaurantListController.initFunction(addRestaurantStage , nameFLD.getText(),addressFLD.getText(),admin);
             addRestaurantStage.show();
         }
         else
