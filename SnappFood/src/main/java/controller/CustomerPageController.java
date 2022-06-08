@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.Customer;
 
@@ -14,9 +15,13 @@ public class CustomerPageController {
 
     private Stage customerStage;
     private Customer customer;
+    @FXML
+    private Label customerNameLBL;
+
     public void initFunction(Stage customerStage , Customer customer){
         this.customerStage=customerStage;
         this.customer=customer;
+        customerNameLBL.setText(customer.getName()+" "+customer.getFamily());
     }
     @FXML
     void backHandler(ActionEvent event) throws IOException {
@@ -30,9 +35,9 @@ public class CustomerPageController {
         customerStage.show();
     }
 
-   @FXML
-    void pressSearch(ActionEvent event) throws IOException {
-          FXMLLoader loader= new FXMLLoader(getClass().getResource("/searchRestaurantForCustomer.fxml"));
+    @FXML
+    void pressSearch(ActionEvent event) throws IOException{
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/searchRestaurantForCustomer.fxml"));
         loader.load();
         searchRestaurantForCustomerController searchRestaurantForCustomerController = loader.getController();
         customerStage.setScene(new Scene((Parent) loader.getRoot()));
@@ -66,8 +71,11 @@ public class CustomerPageController {
         addFriendController.initFunction(customerStage, customer);
         customerStage.show();
     }
+
+
     @FXML
-    public void pressCart(ActionEvent actionEvent) {
+    void pressCart(ActionEvent event) {
+
     }
 
 }
