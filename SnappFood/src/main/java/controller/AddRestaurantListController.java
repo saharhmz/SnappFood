@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.Admin;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,11 +21,15 @@ public class AddRestaurantListController implements Initializable {
     private Stage listStage;
     private String name;
     private String address;
-    public void initFunction(Stage listStage , String name , String address){
+    private Admin admin;
+
+    public void initFunction(Stage listStage , String name , String address , Admin admin){
         this.listStage=listStage;
         this.address=address;
         this.name=name;
+        this.admin =admin;
     }
+
     @FXML
     private TextField priceFastFoodFDL;
     @FXML
@@ -76,7 +81,7 @@ public class AddRestaurantListController implements Initializable {
         listStage.setScene(new Scene((Parent) loader.getRoot()));
         listStage.setTitle("Add Restaurant");
         listStage.setResizable(false);
-        addRestaurantController.initFunction(listStage);
+        addRestaurantController.initFunction(listStage,admin);
         listStage.show();
     }
 
