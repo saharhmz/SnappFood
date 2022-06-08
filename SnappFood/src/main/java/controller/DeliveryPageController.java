@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.Delivery;
 
@@ -13,8 +14,12 @@ import java.io.IOException;
 public class DeliveryPageController {
 
     private Stage deliveryStage;
+    @FXML
+    private Label deliveryNameLBL;
+
     public void initFunction(Stage deliveryStage , Delivery delivery){
         this.deliveryStage=deliveryStage;
+        deliveryNameLBL.setText(delivery.getName()+" "+delivery.getFamily());
     }
 
     @FXML
