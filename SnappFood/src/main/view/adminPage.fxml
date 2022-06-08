@@ -15,7 +15,7 @@
                 <Font name="Century Schoolbook Bold Italic" size="16.0" />
             </font>
         </Label>
-        <Label layoutX="188.0" layoutY="14.0" text="Admin" textFill="#1b1b26">
+        <Label fx:id="adminNameLBL" alignment="CENTER" layoutX="77.0" layoutY="14.0" prefHeight="34.0" prefWidth="304.0" textFill="#1b1b26">
             <font>
                 <Font name="Franklin Gothic Demi Cond" size="28.0" />
             </font>
