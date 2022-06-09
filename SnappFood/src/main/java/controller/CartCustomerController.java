@@ -152,15 +152,40 @@ public class CartCustomerController implements Initializable {
             }
 
         }
+        @FXML
+    void cancelHandler(ActionEvent event) {
+        errorLBL.setText("");
+        Order selectedOrder = orderTable.getSelectionModel().getSelectedItem();
+        if(selectedOrder != null){
+            cartCustomerFile.deleteOrder(selectedOrder);
+            try {
+                backHandler(event);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        else
+            errorLBL.setText("Select a Order");
+    }
         else
             errorLBL.setText("Select a order");
     }
 
-    @FXML
+   @FXML
     void cancelHandler(ActionEvent event) {
-
+        errorLBL.setText("");
+        Order selectedOrder = orderTable.getSelectionModel().getSelectedItem();
+        if(selectedOrder != null){
+            cartCustomerFile.deleteOrder(selectedOrder);
+            try {
+                backHandler(event);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        else
+            errorLBL.setText("Select a Order");
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
